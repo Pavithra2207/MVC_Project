@@ -1,0 +1,127 @@
+﻿@model IEnumerable<MVC.Models.ModelFile>
+
+@{
+    ViewBag.Title = "PageReturn";
+}
+
+@*<h2>PageReturn</h2>*@
+
+
+@*<%@ Page Language="C#" Inherits="System.Web.Mvc.ViewPage<MvcApplication.Models.ModelFile>
+    " %>*@
+
+@*<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+        <html xmlns="http://www.w3.org/1999/xhtml">
+        <head runat="server">
+            <title>Index</title>
+        </head>
+        <body>
+            <%: Html.LabelFor(model=> model.departmentList) %>
+            <%: Html.DropDownListFor(model => model.departmentList, Model.departmentList)%>
+        </body>
+    </html>*@
+
+@*Now we take a look at the view code.*@
+
+@*<%@ Page Language="C#" Inherits="System.Web.Mvc.ViewPage<MvcApplication.Models.ModelFile>
+    " %>*@
+
+@*This line of code means Page directory inherits the model SubjectModel on the view so we can access data on the view through the model.
+
+    <%: Html.LabelFor(model=> model.departmentList) %>
+
+    In this line we are using the HTML Helper LabelFor method to create a label. We are using the SubjectList property of SubjectModel so it shows DisplayName of the property. It generates the following HTML code:
+
+    <label for="departmentList">Category</label>
+
+    <%: Html.DropDownListFor(model => model.departmentList, Model.departmentList)%>
+
+    In this line we are using the HTML Helper DropDownListFor method to create a dropdownlist, in other words HTML select element. We are using the property SubjectList that contains all list items of subjects that bind to it. It generates the following HTML code.*@
+<br />
+<br />
+<label for="departmentList">Category : </label>
+
+<select id="departmentList" name="departmentList">
+    <option value="1">Finance</option>
+    <option value="2">Manufacturing</option>
+    <option value="3">Transportation</option>
+    <option value="4">HR</option>
+    <option value="5">Others</option>
+</select>
+
+<br />
+<br />
+
+<label for="year">Year      : </label>
+
+<select id="year" name="year">
+    <option value="1">2015</option>
+    <option value="2">2016</option>
+    <option value="3">2017</option>
+    <option value="4">2018</option>
+    <option value="5">2019</option>
+    <option value="6">2020</option>
+    <option value="7">2021</option>
+</select>
+
+<br />
+<br />
+<label for="Amount">Amount : </label>
+
+<textarea>
+
+</textarea>
+
+<br />
+<br />
+@*<button>
+    Create
+</button>*@
+
+<form>
+    <body>
+        <div>
+            @using (Html.BeginForm("ModelFile", "HomeController", FormMethod.Post))
+            {
+
+                @*@Html.DropDownList("departmentList")
+            <br />
+            @Html.DropDownList("year")
+            <br />*@
+
+                <input type="submit" value="Save" />
+
+                <input type="submit" value="Cancel" />
+            }
+        </div>
+    </body>
+</form>
+
+@*<p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th></th>
+        </tr>%
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
+
+    </table>*@
+
+</MvcApplication.Models.ModelFile>
+</MvcApplication.Models.ModelFile>
+
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script> 
